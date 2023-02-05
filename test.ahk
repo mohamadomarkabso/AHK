@@ -1,0 +1,19 @@
+﻿w::
+    startTime := A_TickCount
+    while (GetKeyState("w", "P"))
+    {
+        if (A_TickCount - startTime >= 3000)
+        {
+         CoordMode, Mouse
+         MouseGetPos, xp, yp
+		 FileAppend, x: %xp% y: %yp%`n, pos.txt
+        }
+    }
+    if (!(A_TickCount - startTime >= 3000))
+    {
+     SetMouseDelay, 0
+     MouseGetPos, x, y
+     Click %xp%, %yp%
+     MouseMove, x, y, 0
+    }
+return
