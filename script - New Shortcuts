@@ -6,6 +6,7 @@ w::
         {
          CoordMode, Mouse
          MouseGetPos, xp, yp
+		 FileAppend, x: %xp% y: %yp%`n, pos.txt
         }
     }
     if (!(A_TickCount - startTime >= 3000))
